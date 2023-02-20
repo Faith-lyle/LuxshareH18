@@ -1,0 +1,12 @@
+{
+    "setting":{
+      "passQty": 1,
+      "failQty": 1,
+      "LogPath": ".",
+      "Title": "H28 MIC Sorting"
+    },
+    "testPlan":{
+    },
+    "Mes":{
+    }
+}

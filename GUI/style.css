@@ -1,0 +1,39 @@
+#pbt_start{
+    border: 2px solid rgb(78,238,158);/*边框颜色值*/
+    border-radius: 9px;
+    margin: 10px;
+    margin-top: 0px;
+    min-width: 60px;
+    min-height: 40px;
+    max-height: 60px;
+    background-color: aquamarine;
+    font-size: 28pt;
+}
+#pbt_start::hover{
+    border-color: chocolate;
+    background-color:chocolate
+}
+#pbt_start::pressed{
+    border-color:blueviolet;
+    background-color:blueviolet
+}
+#lb_result{
+    min-width: 80px;
+    min-height: 60px;
+    font-size: 30pt;
+    background-color:darkgray;
+}
+#lb_ct,#label_3{
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 30pt;
+}
+#label_3{
+    margin-left:20px;
+}
+#ed_sn{
+    min-width: 50px;
+    min-height: 30px;
+    font-size: 18pt;
+}
+
