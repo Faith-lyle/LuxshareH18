@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="log">
+    <file>img/luxshare.png</file>
+  </qresource>
+</RCC>

@@ -9,13 +9,13 @@
     background-color: aquamarine;
     font-size: 28pt;
 }
-#pbt_start::hover{
-    border-color: chocolate;
-    background-color:chocolate
+#pbt_start:hover{
+    border-color: lightsalmon;
+    background-color:lightsalmon
 }
-#pbt_start::pressed{
-    border-color:blueviolet;
-    background-color:blueviolet
+#pbt_start:pressed{
+    border-color:darkcyan;
+    background-color:darkcyan
 }
 #lb_result{
     min-width: 80px;
@@ -35,5 +35,52 @@
     min-width: 50px;
     min-height: 30px;
     font-size: 18pt;
+}
+#tableWidget{
+    background-color: white;
+}
+#bt_clear{
+    border: 2px solid rgb(78,138,138);/*边框颜色值*/
+    border-radius: 9px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color:rgb(78,138,138);
+    font-size: 18pt;
+}
+#bt_clear:hover{
+    border: 2px solid lightsalmon;/*边框颜色值*/
+    background-color:lightsalmon;
+}
+#bt_clear:pressed{
+    border: 2px solid darkcyan;/*边框颜色值*/
+    background-color:darkcyan;
+}
+#formFrame .QLabel{
+    font-size: 15px;
+}
+
+.QTabWidget::pane{
+	background:rgb(246, 246, 246);
+	border-top-color:transparent;
+margin:0px;
+}
+.QTabWidget::tab-bar{
+	background:rgb(0, 0, 0);
+	subcontrol-position:center;
+}
+.QTabBar::tab{
+	width:173px;/*宽度根据实际需要进行调整*/
+	height:20px;
+	background:rgb(210, 210, 210);
+	border: 1px solid rgb(210, 210, 210);
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+.QTabBar::tab:selected{
+	background:rgb(255, 255, 255);
+	border-bottom-color:rgb(246, 246, 246);
+}
+.QTabBar::tab:!selected{
+	background:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0; stop:0 rgba(240, 240, 240, 255), stop:0.5 rgba(210, 210, 210, 255), stop:1 rgba(225, 225, 225, 255));
 }
 

@@ -16,14 +16,24 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2,10">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,3,2">
       <property name="rightMargin">
        <number>20</number>
       </property>
       <item>
+       <widget class="QLabel" name="label_4">
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/log/img/luxshare.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QLabel" name="label">
         <property name="styleSheet">
-         <string notr="true">font: 75 24pt &quot;Helvetica&quot;;
+         <string notr="true">font: 75 32pt &quot;Helvetica&quot;;
 color: rgb(255, 16, 0);</string>
         </property>
         <property name="text">
@@ -45,7 +55,7 @@ pt &quot;Helvetica&quot;;</string>
 BY SMT TE</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
         </property>
         <property name="margin">
          <number>0</number>
@@ -111,7 +121,7 @@ QTabBar::tab:!selected{
  </string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="tab">
              <attribute name="title">
@@ -134,9 +144,15 @@ QTabBar::tab:!selected{
                <number>0</number>
               </property>
               <item>
-               <widget class="QTableView" name="tableView">
+               <widget class="QTableWidget" name="tableWidget">
+                <property name="autoFillBackground">
+                 <bool>true</bool>
+                </property>
                 <property name="styleSheet">
-                 <string notr="true"/>
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
                 </property>
                </widget>
               </item>
@@ -166,6 +182,9 @@ QTabBar::tab:!selected{
                <widget class="QTextEdit" name="textEdit">
                 <property name="styleSheet">
                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="lineWrapMode">
+                 <enum>QTextEdit::NoWrap</enum>
                 </property>
                 <property name="readOnly">
                  <bool>true</bool>
@@ -249,13 +268,11 @@ QTabBar::tab:!selected{
           <item>
            <widget class="QFrame" name="formFrame">
             <property name="styleSheet">
-             <string notr="true">.QLabel{
-	font: 25 16pt &quot;Helvetica&quot;;
-}
-*{
+             <string notr="true">
+
+.QFrame{
 background-color: rgb(255, 255, 255);
-}
-</string>
+}</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::Panel</enum>
@@ -366,6 +383,8 @@ background-color: rgb(255, 255, 255);
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../img.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -19,22 +19,30 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setContentsMargins(-1, -1, 20, -1)
-        self.verticalLayout.setObjectName("verticalLayout")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setContentsMargins(-1, -1, 20, -1)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setStyleSheet("border-image: url(:/log/img/luxshare.png);")
+        self.label_4.setText("")
+        self.label_4.setObjectName("label_4")
+        self.horizontalLayout_2.addWidget(self.label_4)
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setStyleSheet("font: 75 24pt \"Helvetica\";\n"
+        self.label.setStyleSheet("font: 75 32pt \"Helvetica\";\n"
 "color: rgb(255, 16, 0);")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
-        self.verticalLayout.addWidget(self.label)
+        self.horizontalLayout_2.addWidget(self.label)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setStyleSheet("font: 75 13\n"
 "pt \"Helvetica\";")
-        self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_2.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing)
         self.label_2.setObjectName("label_2")
-        self.verticalLayout.addWidget(self.label_2)
-        self.verticalLayout_2.addLayout(self.verticalLayout)
+        self.horizontalLayout_2.addWidget(self.label_2)
+        self.horizontalLayout_2.setStretch(0, 2)
+        self.horizontalLayout_2.setStretch(1, 3)
+        self.horizontalLayout_2.setStretch(2, 2)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         self.horizontalFrame = QtWidgets.QFrame(self.centralwidget)
         self.horizontalFrame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.horizontalFrame.setObjectName("horizontalFrame")
@@ -80,10 +88,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_7.setSpacing(0)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.tableView = QtWidgets.QTableView(self.tab)
-        self.tableView.setStyleSheet("")
-        self.tableView.setObjectName("tableView")
-        self.verticalLayout_7.addWidget(self.tableView)
+        self.tableWidget = QtWidgets.QTableWidget(self.tab)
+        self.tableWidget.setAutoFillBackground(True)
+        self.tableWidget.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.tableWidget.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
+        self.verticalLayout_7.addWidget(self.tableWidget)
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -93,6 +105,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.textEdit = QtWidgets.QTextEdit(self.tab_2)
         self.textEdit.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.textEdit.setLineWrapMode(QtWidgets.QTextEdit.NoWrap)
         self.textEdit.setReadOnly(True)
         self.textEdit.setObjectName("textEdit")
         self.verticalLayout_8.addWidget(self.textEdit)
@@ -128,13 +141,11 @@ class Ui_MainWindow(object):
         self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lb_ct)
         self.verticalLayout_3.addLayout(self.formLayout_2)
         self.formFrame = QtWidgets.QFrame(self.verticalWidget_2)
-        self.formFrame.setStyleSheet(".QLabel{\n"
-"    font: 25 16pt \"Helvetica\";\n"
-"}\n"
-"*{\n"
+        self.formFrame.setStyleSheet("\n"
+"\n"
+".QFrame{\n"
 "background-color: rgb(255, 255, 255);\n"
-"}\n"
-"")
+"}")
         self.formFrame.setFrameShape(QtWidgets.QFrame.Panel)
         self.formFrame.setObjectName("formFrame")
         self.formLayout = QtWidgets.QFormLayout(self.formFrame)
@@ -182,7 +193,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -202,3 +213,4 @@ class Ui_MainWindow(object):
         self.lb_fail_qty.setText(_translate("MainWindow", "0"))
         self.label_9.setText(_translate("MainWindow", "Yield:"))
         self.lb_yield.setText(_translate("MainWindow", "100%"))
+from GUI import img_rc

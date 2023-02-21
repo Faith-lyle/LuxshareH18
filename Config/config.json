@@ -1,12 +1,133 @@
 {
-    "setting":{
-      "passQty": 1,
-      "failQty": 1,
-      "LogPath": ".",
-      "Title": "H28 MIC Sorting"
+    "setting": {
+        "passQty": 3,
+        "failQty": 7,
+        "LogPath": ".",
+        "Title": "H28 MIC Sorting",
+        "station_id": "",
+        "sw_version": "1.0.0.1"
     },
-    "testPlan":{
-    },
-    "Mes":{
-    }
+    "testPlan": [
+        {
+            "NO": "1",
+            "testItem": "create_grassninja_port",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        },
+        {
+            "NO": "2",
+            "testItem": "open_serial_port",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        },
+        {
+            "NO": "3",
+            "testItem": "dut_info",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        },
+        {
+            "NO": "4",
+            "testItem": "read_product_mlb",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        },
+        {
+            "NO": "5",
+            "testItem": "read_product_fw",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        },
+        {
+            "NO": "6",
+            "testItem": "mic1_init",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        },
+        {
+            "NO": "7",
+            "testItem": "mic1_test",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        },
+        {
+            "NO": "8",
+            "testItem": "mic2_init",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        },
+        {
+            "NO": "9",
+            "testItem": "mic2_test",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        },
+        {
+            "NO": "9",
+            "testItem": "dut_shutdown",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        },
+        {
+            "NO": "9",
+            "testItem": "close_serial_port",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        },
+        {
+            "NO": "9",
+            "testItem": "close_grassninja",
+            "Unit": "NA",
+            "Upper": "NA",
+            "Lower": "NA",
+            "Mode": "Special",
+            "Input": [],
+            "Return": []
+        }
+    ],
+    "Mes": {}
 }
