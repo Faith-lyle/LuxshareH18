@@ -128,8 +128,8 @@ class TestFunctions():
                 output += "return_code:{}\n".format(return_code)
                 output += "stdout:{}\n".format(stdout.decode())
                 if return_code != 0:
-                    output += "stdout:{}\n".format(stdout.decode())
-                    self.log.send_error(stderr.decode())
+                    # output += "stdout:{}\n".format(stdout.decode())
+                    output += "stderr:{}\n".format(stderr.decode())
                     continue
                 output += "Serial Port:\n"
                 stime = time.time()

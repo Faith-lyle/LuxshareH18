@@ -14,8 +14,7 @@ import sys
 from PyQt5.QtCore import Qt, pyqtSlot, pyqtSignal, QTimer
 from PyQt5.QtGui import QColor, QPalette
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFormLayout, QLabel, QAbstractItemView, QHeaderView, \
-    QTableWidgetItem, QPushButton
-
+    QTableWidgetItem, QPushButton, QFrame,QMessageBox
 from GUI.UI.Ui_mainPanel import Ui_MainWindow
 
 
@@ -25,14 +24,19 @@ class MainPanel(QMainWindow, Ui_MainWindow):
 
     def __init__(self, config):
         super(MainPanel, self).__init__()
+        self.action_time = None
         self.config = config
         self.lb_result = QLabel("text")
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.timer_timeout_func)
+        self.action_timer = QTimer(self)
+        self.action_timer.timeout.connect(self.action_timer_timeout_func)
         self.bt_clear = QPushButton("Clear")
         self.init_ui()
         self.signal_connect_slot()
         self.tabWidget.setCurrentIndex(0)
+        self.frame.setVisible(False)
+        self.verticalLayout_2.setStretch(1, 2)
 
     def init_ui(self):
         """
@@ -64,6 +68,29 @@ class MainPanel(QMainWindow, Ui_MainWindow):
                     self.config['setting']['passQty'] + self.config['setting']['failQty']) * 100))
 
         self.table_view_init()
+        self.frame.setStyleSheet("""
+                *{
+                font-size: 15pt;
+                }
+                .QPushButton{
+                    min-width:80px;
+                    min-height:25px;
+                    border: 2px solid rgb(78,138,138);/*边框颜色值*/
+                    border-radius: 9px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    background-color:rgb(78,138,138);
+                    font-size: 15pt;
+                }
+                .QPushButton:hover{
+                    border: 2px solid lightsalmon;/*边框颜色值*/
+                    background-color:lightsalmon;
+                }
+                .QPushButton:pressed{
+                    border: 2px solid darkcyan;/*边框颜色值*/
+                    background-color:darkcyan;
+                }
+                """)
 
     def signal_connect_slot(self):
         self.bt_clear.clicked.connect(self.clear_count_qty)
@@ -178,6 +205,49 @@ class MainPanel(QMainWindow, Ui_MainWindow):
         self.start_signal.emit(self.ed_sn.text().strip())
         self.lb_ct.setText('0.0')
         self.timer.start(100)
+
+    def setting_panel_init(self):
+
+        self.verticalLayout_2.setStretch(2, 100)
+        self.label.setVisible(False)
+        self.label_2.setVisible(False)
+        self.label_4.setVisible(False)
+        self.frame.setVisible(True)
+        self.verticalLayout_2.setStretch(1, 0)
+
+    def setting_panel_close(self):
+        self.horizontalLayout_2.setParent(self.verticalLayout_2)
+        self.label.setVisible(True)
+        self.label_2.setVisible(True)
+        self.label_4.setVisible(True)
+        self.frame.setVisible(False)
+
+        self.verticalLayout_2.setStretch(0, 0)
+        self.verticalLayout_2.setStretch(1, 20)
+        self.verticalLayout_2.setStretch(2, 100)
+
+    def action_timer_timeout_func(self):
+        self.action_time += 1
+        self.verticalLayout_2.setStretch(0, self.action_time)
+        if self.action_time > 20:
+            self.action_timer.stop()
+
+    @pyqtSlot()
+    def on_action_triggered(self):
+        self.setting_panel_init()
+        self.action_time = 0
+        self.action_timer.start(10)
+
+    @pyqtSlot()
+    def on_pushButton_clicked(self):
+        if self.lineEdit.text() == 'admin':
+            self.setting_panel_close()
+        else:
+            QMessageBox.critical(None,'error','密码错误！')
+
+    @pyqtSlot()
+    def on_pushButton_3_clicked(self):
+        self.setting_panel_close()
 
     def closeEvent(self, a0):
         self.close_signal.emit(self.config)

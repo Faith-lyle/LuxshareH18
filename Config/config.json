@@ -1,7 +1,7 @@
 {
     "setting": {
         "passQty": 3,
-        "failQty": 7,
+        "failQty": 11,
         "LogPath": ".",
         "Title": "H28 MIC Sorting",
         "station_id": "",

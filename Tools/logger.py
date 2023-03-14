@@ -23,7 +23,7 @@ class ConsolePanelHandler(logging.Handler):
         line = record_dict['filename'] + " -> line:" + str(record_dict['lineno']) + " | "
         pid = f"(pid: {+record_dict['process']},tid: {record_dict['thread']})"
         levelname = record_dict['levelname']
-        message = record_dict['message']
+        message = record_dict['message'].replace('\n','<br>')
         if levelname == 'ERROR':
             color = "#FF0000"
         elif levelname == 'WARNING':

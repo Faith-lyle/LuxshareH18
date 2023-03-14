@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-
-
 """
 @Author  :   long.hou
 @Email   :   long2.hou@luxshare-ict.com
